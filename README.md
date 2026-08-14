@@ -216,3 +216,29 @@ Histórico
    ↓
 Perfil
 ```
+# Resumo da Arquitetura 
+```
+capyflix/
+│
+├── backend/
+│   │
+│   ├── src/
+│   │   └── main/
+│   │       └── java/
+│   │           └── com/capyflix/
+│   │
+│   ├── controller/
+│   ├── service/
+│   ├── repository/
+│   ├── model/
+│   ├── dto/
+│   └── config/
+│
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── assets/
+│
+└── README.md
+```
