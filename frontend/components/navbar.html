@@ -1,68 +1,142 @@
 <header class="navbar">
 
-    <div class="navbar-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
 
-        <a href="index.html" class="navbar-logo">
-            🦫
-            <span>CapyCine</span>
-            <strong>Flix</strong>
-        </a>
+        <div class="sidebar-logo">
+            <a href="index.html">
+
+                <img src="../../public/capybara.svg" alt="CapyCine" class="sidebar-logo-icon">
+
+                <span class="sidebar-logo-text">
+                    <strong>CAPY</strong>CINE
+                    <small>FLIX</small>
+                </span>
+
+            </a>
+        </div>
 
 
-        <nav class="navbar-menu">
+        <nav class="sidebar-navigation">
 
-            <a href="index.html" class="active">
-                Início
+            <a href="index.html" class="sidebar-link active">
+                <i class="bi bi-house-fill"></i>
+                <span>Início</span>
             </a>
 
-            <a href="#">
-                Filmes
+            <a href="#filmes" class="sidebar-link">
+                <i class="bi bi-film"></i>
+                <span>Filmes</span>
             </a>
 
-            <a href="#">
-                Séries
+            <a href="#series" class="sidebar-link">
+                <i class="bi bi-tv"></i>
+                <span>Séries</span>
             </a>
 
-            <a href="#">
-                Categorias
+            <a href="#categorias" class="sidebar-link">
+                <i class="bi bi-grid-fill"></i>
+                <span>Categorias</span>
             </a>
 
-            <a href="#">
-                Minha Lista
+            <a href="#minha-lista" class="sidebar-link">
+                <i class="bi bi-heart-fill"></i>
+                <span>Minha lista</span>
+            </a>
+
+            <a href="#historico" class="sidebar-link">
+                <i class="bi bi-clock-history"></i>
+                <span>Histórico</span>
             </a>
 
         </nav>
 
 
-        <div class="navbar-actions">
+        <div class="sidebar-profile">
 
-            <button
-                type="button"
-                class="search-button"
-                aria-label="Pesquisar"
-            >
-                🔍
+            <img src="../../public/img/image.png" alt="Perfil CapyCine">
+
+            <div>
+                <strong>Assine o Capyflix</strong>
+                <span>Planos a partir de</span>
+                <b>R$ 19,90/mês</b>
+            </div>
+
+            <a href="#planos" class="sidebar-plan-button">
+                Ver planos
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- NAVBAR SUPERIOR -->
+    <div class="topbar">
+
+        <div class="topbar-left">
+
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
             </button>
 
-            <button
-                type="button"
-                class="profile-button"
-                aria-label="Perfil"
-            >
-                🦫
+            <nav class="top-navigation">
+
+                <a href="index.html" class="active">
+                    Início
+                </a>
+
+                <a href="#filmes">
+                    Filmes
+                </a>
+
+                <a href="#series">
+                    Séries
+                </a>
+
+                <a href="#categorias">
+                    Categorias
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <!-- PESQUISA -->
+            <form class="search-box" role="search">
+
+                <i class="bi bi-search"></i>
+
+                <input type="search" placeholder="Buscar filmes, séries..." aria-label="Buscar filmes e séries">
+
+            </form>
+
+
+            <!-- NOTIFICAÇÕES -->
+            <button class="icon-button" type="button" aria-label="Notificações">
+                <i class="bi bi-bell"></i>
             </button>
 
-            <button
-                type="button"
-                class="menu-button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-            >
-                ☰
+
+            <!-- PERFIL -->
+            <button class="profile-button" type="button" aria-label="Abrir perfil">
+                <img src="../../public/img/capyIcon.png" alt="Perfil">
+            </button>
+
+
+            <button class="profile-arrow" type="button" aria-label="Opções do perfil">
+                <i class="bi bi-chevron-down"></i>
             </button>
 
         </div>
 
     </div>
+
+
+    <!-- FUNDO DO MENU MOBILE -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
 </header>
