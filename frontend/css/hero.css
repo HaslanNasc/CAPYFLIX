@@ -1,0 +1,481 @@
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    width: 100%;
+
+    padding: 15px 10px 0;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    margin-left: 220px;
+    padding-top: 75px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* =========================
+   IMAGEM DO HERO
+========================= */
+
+.hero-image {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 350px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background-image: url("../../public/img/capycineflixHero.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    margin-top: 70px;
+
+
+}
+
+
+/* =========================
+   CARD / INFORMAÇÕES
+========================= */
+
+.hero-overlay {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 5%;
+
+    transform: translateY(-50%);
+
+    width: min(390px, 42%);
+
+    padding: 22px;
+
+    box-sizing: border-box;
+
+    border-radius: 20px;
+
+    margin-left: 50px;
+
+    margin-top: 20px;
+
+    /*
+        Transparência para
+        deixar a imagem aparecer
+        atrás do conteúdo.
+    */
+
+    background: rgba(255, 247, 232, 0.72);
+
+    backdrop-filter: blur(5px);
+
+    border: 1px solid rgba(255, 253, 247, 0.75);
+
+    box-shadow:
+        0 10px 30px rgba(107, 79, 58, 0.12);
+
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 12px;
+
+    margin-bottom: 12px;
+
+    border-radius: 20px;
+
+    background-color: #F4A261;
+
+    color: #FFFDF7;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.hero-overlay h1 {
+
+    margin: 0 0 10px;
+
+    color: #6B4F3A;
+
+    font-size: clamp(28px, 3vw, 46px);
+
+    line-height: 0.98;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.hero-overlay p {
+
+    max-width: 340px;
+
+    margin: 0 0 18px;
+
+    color: #6B4F3A;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.hero-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 38px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+.hero-button:hover {
+
+    transform: translateY(-2px);
+}
+
+
+.hero-button-primary {
+
+    background-color: #F4A261;
+
+    color: #FFFDF7;
+}
+
+
+.hero-button-primary:hover {
+
+    background-color: #E89150;
+}
+
+
+.hero-button-secondary {
+
+    background-color: rgba(255, 253, 247, 0.9);
+
+    color: #6B4F3A;
+
+    border: 1px solid #FFD0A8;
+}
+
+
+.hero-button-secondary:hover {
+
+    background-color: #FFFDF7;
+}
+
+/* =====================================================
+   HERO - RESPONSIVO
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .hero {
+        width: 100%;
+        padding: 10px 12px 0;
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       IMAGEM
+    ========================= */
+
+    .hero-image {
+
+        width: 100%;
+
+        height: 430px;
+        min-height: 430px;
+
+        border-radius: 20px;
+
+        background-size: cover;
+
+        /*
+         * Ajusta a posição da imagem
+         * para manter a capivara visível.
+         */
+
+        background-position: 65% center;
+
+        overflow: hidden;
+    }
+
+
+    /* =========================
+       CARD
+    ========================= */
+
+    .hero-overlay {
+
+        position: absolute;
+
+        top: auto;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+
+        transform: none;
+
+        width: auto;
+        max-width: none;
+
+        margin: 0;
+
+        padding: 16px;
+
+        box-sizing: border-box;
+
+        border-radius: 20px;
+
+        background: rgba(255, 247, 232, 0.82);
+
+        backdrop-filter: blur(8px);
+
+        border: 1px solid rgba(255, 253, 247, 0.85);
+
+        box-shadow:
+            0 8px 25px rgba(107, 79, 58, 0.18);
+    }
+
+
+    /* =========================
+       BADGE
+    ========================= */
+
+    .hero-badge {
+
+        padding: 6px 11px;
+
+        margin-bottom: 9px;
+
+        font-size: 9px;
+    }
+
+
+    /* =========================
+       TÍTULO
+    ========================= */
+
+    .hero-overlay h1 {
+
+        margin: 0 0 8px;
+
+        font-size: 28px !important;
+
+        line-height: 1.05 !important;
+
+        letter-spacing: -0.5px;
+
+        max-width: 280px;
+
+        color: #6B4F3A;
+    }
+
+
+    /* =========================
+       DESCRIÇÃO
+    ========================= */
+
+    .hero-overlay p {
+
+        max-width: 260px;
+
+        margin: 0 0 12px;
+
+        font-size: 11px;
+
+        line-height: 1.4;
+    }
+
+
+    /* =========================
+       BOTÕES
+    ========================= */
+
+    .hero-actions {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-button {
+
+        min-height: 34px;
+
+        padding: 0 13px;
+
+        border-radius: 18px;
+
+        font-size: 10px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR PEQUENO
+===================================================== */
+
+@media (max-width: 450px) {
+
+    .hero {
+
+        padding: 8px 10px 0;
+    }
+
+
+    .hero-image {
+
+        height: 390px;
+
+        min-height: 390px;
+
+        border-radius: 18px;
+
+        background-position: 68% center;
+    }
+
+
+    .hero-overlay {
+
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+
+        padding: 14px;
+
+        border-radius: 18px;
+    }
+
+
+    .hero-overlay h1 {
+
+        font-size: 24px !important;
+
+        line-height: 1.05 !important;
+
+        max-width: 250px;
+    }
+
+
+    .hero-overlay p {
+
+        font-size: 10px;
+
+        max-width: 230px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .hero-button {
+
+        min-height: 32px;
+
+        padding: 0 11px;
+
+        font-size: 9px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    main {
+
+        margin-left: 0;
+
+        padding-top: 65px;
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}

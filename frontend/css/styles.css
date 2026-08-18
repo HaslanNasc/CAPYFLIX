@@ -2,10 +2,189 @@ body {
     margin: 0;
     min-height: 100vh;
 
-    background-image: url("../../public/img/capycineflixHero.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #594230;
+    background-color: #fbc296;
 }
 
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 12px 10px 0;
+    }
+
+
+    .hero-image {
+
+        min-height: 320px;
+
+        background-position: center;
+    }
+
+
+    .hero-overlay {
+
+        left: 4%;
+
+        width: min(360px, 48%);
+
+        padding: 18px;
+    }
+
+
+    .hero-overlay h1 {
+
+        font-size: clamp(25px, 4vw, 38px);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+
+        padding: 10px 8px 0;
+    }
+
+
+    .hero-image {
+
+        min-height: 430px;
+
+        border-radius: 16px;
+
+        background-position: 65% center;
+
+        /*
+            A imagem continua sendo
+            o fundo do Hero, mas agora
+            o tamanho é controlado
+            pelo próprio componente.
+        */
+    }
+
+
+    .hero-overlay {
+
+        top: auto;
+
+        bottom: 15px;
+
+        left: 15px;
+
+        transform: none;
+
+        width: calc(100% - 30px);
+
+        padding: 18px;
+
+        border-radius: 18px;
+
+        background: rgba(255, 247, 232, 0.82);
+
+        backdrop-filter: blur(7px);
+    }
+
+
+    .hero-badge {
+
+        font-size: 9px;
+
+        padding: 5px 10px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .hero-overlay h1 {
+
+        font-size: clamp(25px, 8vw, 34px);
+
+        line-height: 1;
+
+        margin-bottom: 8px;
+    }
+
+
+    .hero-overlay p {
+
+        font-size: 11px;
+
+        margin-bottom: 13px;
+
+        max-width: 100%;
+    }
+
+
+    .hero-actions {
+
+        gap: 7px;
+    }
+
+
+    .hero-button {
+
+        min-height: 35px;
+
+        padding: 0 13px;
+
+        font-size: 10px;
+    }
+
+}
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
+@media (max-width: 450px) {
+
+    .hero-image {
+
+        min-height: 400px;
+
+        background-position: 68% center;
+    }
+
+
+    .hero-overlay {
+
+        bottom: 10px;
+
+        left: 10px;
+
+        width: calc(100% - 20px);
+
+        padding: 15px;
+    }
+
+
+    .hero-overlay h1 {
+
+        font-size: 27px;
+    }
+
+
+    .hero-overlay p {
+
+        font-size: 10px;
+    }
+
+
+    .hero-button {
+
+        flex: 1;
+
+        padding: 0 8px;
+    }
+
+}

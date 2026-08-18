@@ -58,16 +58,30 @@ function initNavbar() {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("sidebar-overlay");
 
+    /*
+     * Verifica se os elementos existem
+     */
+
     if (!menuToggle || !sidebar || !overlay) {
+
         console.error("❌ Elementos do menu não encontrados.");
+
         return;
     }
 
     console.log("✅ Navbar inicializado!");
 
+
+    /*
+     * =========================
+     * ABRIR MENU MOBILE
+     * =========================
+     */
+
     function openMenu() {
 
         sidebar.classList.add("open");
+
         overlay.classList.add("open");
 
         menuToggle.setAttribute(
@@ -79,9 +93,17 @@ function initNavbar() {
             '<i class="bi bi-x-lg"></i>';
     }
 
+
+    /*
+     * =========================
+     * FECHAR MENU MOBILE
+     * =========================
+     */
+
     function closeMenu() {
 
         sidebar.classList.remove("open");
+
         overlay.classList.remove("open");
 
         menuToggle.setAttribute(
@@ -93,21 +115,56 @@ function initNavbar() {
             '<i class="bi bi-list"></i>';
     }
 
+
+    /*
+     * =========================
+     * CLIQUE NO HAMBURGER
+     * =========================
+     */
+
     menuToggle.addEventListener("click", function () {
 
         console.log("🍔 Hamburger clicado!");
 
-        if (sidebar.classList.contains("open")) {
+        /*
+         * MOBILE
+         */
 
-            closeMenu();
+        if (window.innerWidth <= 700) {
 
-        } else {
+            if (sidebar.classList.contains("open")) {
 
-            openMenu();
+                closeMenu();
 
+            } else {
+
+                openMenu();
+
+            }
+
+            return;
         }
 
+
+        /*
+         * DESKTOP
+         */
+
+        sidebar.classList.toggle("collapsed");
+
+        document.body.classList.toggle(
+            "sidebar-collapsed"
+        );
+
+        console.log("🖥️ Sidebar desktop alterada!");
     });
+
+
+    /*
+     * =========================
+     * CLICAR NO OVERLAY
+     * =========================
+     */
 
     overlay.addEventListener(
         "click",
@@ -116,18 +173,29 @@ function initNavbar() {
 
 
     /*
-     * Fecha o menu quando
-     * uma opção é selecionada.
+     * =========================
+     * LINKS DA SIDEBAR
+     * =========================
      */
 
     const sidebarLinks =
         sidebar.querySelectorAll("a");
 
+
     sidebarLinks.forEach(link => {
 
         link.addEventListener("click", () => {
 
-            closeMenu();
+            /*
+             * Só fecha automaticamente
+             * no celular.
+             */
+
+            if (window.innerWidth <= 700) {
+
+                closeMenu();
+
+            }
 
         });
 
@@ -135,11 +203,16 @@ function initNavbar() {
 
 
     /*
-     * Se voltar para desktop,
-     * limpa o estado do menu.
+     * =========================
+     * RESPONSIVIDADE
+     * =========================
      */
 
     window.addEventListener("resize", () => {
+
+        /*
+         * Voltou para desktop
+         */
 
         if (window.innerWidth > 700) {
 
