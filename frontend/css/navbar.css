@@ -39,6 +39,80 @@
         transform 0.3s ease;
 }
 
+/* =========================
+   LOGO DA CAPIVARA
+========================= */
+
+.sidebar-logo-icon {
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    background-image: url("../../public/capybara.svg");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+/* =========================
+   IMAGEM DO PLANO
+========================= */
+
+.sidebar-profile-image {
+
+    width: 158px;
+    height: 158px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background-image: url("../../public/img/image.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/* =========================
+   FOTO DO PERFIL
+========================= */
+
+.profile-image {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background-image: url("../../public/img/capyIcon.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background-image: url("../../public/img/capyIcon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    border: 2px solid #FFD0A8;
+
+    box-sizing: border-box;
+}
+
 
 /* =========================
    SIDEBAR RECOLHIDA - DESKTOP
@@ -87,14 +161,6 @@
 /* =========================
    LOGO
 ========================= */
-
-.sidebar-logo {
-    margin-bottom: 35px;
-
-    padding: 0 8px;
-
-    transition: 0.3s ease;
-}
 
 
 .sidebar-logo a {
@@ -229,16 +295,6 @@
     gap: 4px;
 
     flex-shrink: 0;
-}
-
-
-.sidebar-profile img {
-    width: 158px;
-    height: 158px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
 }
 
 
