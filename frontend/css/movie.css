@@ -1,0 +1,820 @@
+/* =========================================================
+   SEÇÕES DE FILMES
+   CONTINUE ASSISTINDO
+   PARA VOCÊ
+   EM ALTA
+========================================================= */
+
+
+/* =========================================================
+   SEÇÃO
+========================================================= */
+
+.movie-section {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 20px 8px;
+
+    padding-left: 100px;
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.section-header {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    box-sizing: border-box;
+
+}
+
+
+.section-header h2 {
+
+    margin: 0;
+
+    padding: 0;
+
+    color: #6b4f3a;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+}
+
+
+.section-header a {
+
+    color: #6B4F3A;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+
+}
+
+
+.section-header a:hover {
+
+    color: #6B4F3A;
+
+}
+
+
+/* =========================================================
+   CONTAINER DOS CARDS
+========================================================= */
+
+.movie-container {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    padding-right: 38px;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.movie-card {
+
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+
+    aspect-ratio: 16 / 9;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background-color: #F3E2C7;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.movie-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(107, 79, 58, 0.18);
+
+}
+
+
+/* =========================================================
+   ESCURECIMENTO DA PARTE INFERIOR
+========================================================= */
+
+.movie-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(40, 25, 18, 0.78),
+            rgba(40, 25, 18, 0.05) 65%,
+            transparent
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.movie-title {
+
+    position: absolute;
+
+    left: 10px;
+
+    bottom: 9px;
+
+    z-index: 3;
+
+    max-width: calc(100% - 20px);
+
+    color: #FFFDF7;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.6);
+
+}
+
+
+/* =========================================================
+   PROGRESSO - CONTINUE ASSISTINDO
+========================================================= */
+
+.movie-progress {
+
+    position: absolute;
+
+    left: 10px;
+
+    right: 10px;
+
+    bottom: 4px;
+
+    height: 3px;
+
+    border-radius: 10px;
+
+    background-color:
+        rgba(255, 253, 247, 0.45);
+
+    z-index: 4;
+
+    overflow: hidden;
+
+}
+
+
+.movie-progress::after {
+
+    content: "";
+
+    display: block;
+
+    width: 65%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background-color: #F4A261;
+
+}
+
+
+/* =========================================================
+   NOTA / RATING
+========================================================= */
+
+.movie-rating {
+
+    position: absolute;
+
+    left: 10px;
+
+    bottom: 7px;
+
+    z-index: 4;
+
+    color: #FFFDF7;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.6);
+
+}
+
+
+/*
+   Como o título fica junto com a nota,
+   deixamos espaço para os dois.
+*/
+
+.movie-card .movie-rating + .movie-title {
+
+    bottom: 22px;
+
+}
+
+
+/* =========================================================
+   SETA
+========================================================= */
+
+.movie-arrow {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 30px;
+
+    height: 30px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #FFD0A8;
+
+    border-radius: 50%;
+
+    background-color: #FFFDF7;
+
+    color: #F4A261;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    box-shadow:
+        0 3px 8px rgba(107, 79, 58, 0.12);
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.movie-arrow:hover {
+
+    background-color: #F4A261;
+
+    color: #FFFDF7;
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+
+}
+
+
+/* =========================================================
+   CONTINUE ASSISTINDO
+========================================================= */
+
+.continue-assistindo .continue-1 {
+
+    background-image:
+        url("../../public/img/continue1.jpg");
+
+}
+
+.continue-assistindo .continue-2 {
+
+    background-image:
+        url("../../public/img/continue2.jpg");
+
+}
+
+.continue-assistindo .continue-3 {
+
+    background-image:
+        url("../../public/img/continue3.jpg");
+
+}
+
+.continue-assistindo .continue-4 {
+
+    background-image:
+        url("../../public/img/continue4.jpg");
+
+}
+
+.continue-assistindo .continue-5 {
+
+    background-image:
+        url("../../public/img/continue5.jpg");
+
+}
+
+
+/* =========================================================
+   PARA VOCÊ
+========================================================= */
+
+.para-voce .para-1 {
+
+    background-image:
+        url("../../public/img/para1.jpg");
+
+}
+
+.para-voce .para-2 {
+
+    background-image:
+        url("../../public/img/para2.jpg");
+
+}
+
+.para-voce .para-3 {
+
+    background-image:
+        url("../../public/img/para3.jpg");
+
+}
+
+.para-voce .para-4 {
+
+    background-image:
+        url("../../public/img/para4.jpg");
+
+}
+
+
+/* =========================================================
+   EM ALTA
+========================================================= */
+
+.em-alta .alta-1 {
+
+    background-image:
+        url("../../public/img/alta1.jpg");
+
+}
+
+.em-alta .alta-2 {
+
+    background-image:
+        url("../../public/img/alta2.jpg");
+
+}
+
+.em-alta .alta-3 {
+
+    background-image:
+        url("../../public/img/alta3.jpg");
+
+}
+
+.em-alta .alta-4 {
+
+    background-image:
+        url("../../public/img/alta4.jpg");
+
+}
+
+
+/* =========================================================
+   EVITA QUE O CONTEÚDO ENTRE NA SIDEBAR
+========================================================= */
+
+main {
+
+    box-sizing: border-box;
+
+    width: calc(100% - 220px);
+
+    margin-left: 220px;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    main {
+
+        width: calc(100% - 190px);
+
+        margin-left: 190px;
+
+    }
+
+
+    .movie-section {
+
+        padding-left: 16px;
+
+        padding-right: 16px;
+
+    }
+
+
+    .movie-container {
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    main {
+
+        width: 100%;
+
+        margin-left: 0;
+
+    }
+
+
+    .movie-section {
+
+        width: 100%;
+
+        padding:
+            12px
+            12px
+            8px;
+
+    }
+
+
+    .movie-container {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+
+        padding-right: 34px;
+
+    }
+
+
+    .section-header {
+
+        margin-bottom: 9px;
+
+    }
+
+
+    .section-header h2 {
+
+        font-size: 15px;
+
+    }
+
+
+    .section-header a {
+
+        font-size: 10px;
+
+    }
+
+
+    .movie-card {
+
+        border-radius: 9px;
+
+    }
+
+
+    .movie-title {
+
+        left: 8px;
+
+        bottom: 8px;
+
+        max-width: calc(100% - 16px);
+
+        font-size: 8px;
+
+    }
+
+
+    .movie-rating {
+
+        left: 8px;
+
+        font-size: 8px;
+
+    }
+
+
+    .movie-progress {
+
+        left: 8px;
+
+        right: 8px;
+
+        bottom: 4px;
+
+    }
+
+
+    .movie-arrow {
+
+        width: 27px;
+
+        height: 27px;
+
+        right: 0;
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .movie-section {
+
+        padding:
+            10px
+            10px
+            6px;
+
+    }
+
+
+    .movie-container {
+
+        gap: 8px;
+
+        padding-right: 31px;
+
+    }
+
+
+    .section-header h2 {
+
+        font-size: 14px;
+
+    }
+
+
+    .section-header a {
+
+        font-size: 9px;
+
+    }
+
+
+    .movie-card {
+
+        border-radius: 8px;
+
+    }
+
+
+    .movie-title {
+
+        font-size: 8px;
+
+        left: 7px;
+
+        bottom: 7px;
+
+    }
+
+
+    .movie-rating {
+
+        left: 7px;
+
+        font-size: 8px;
+
+    }
+
+
+    .movie-progress {
+
+        left: 7px;
+
+        right: 7px;
+
+    }
+
+
+    .movie-arrow {
+
+        width: 25px;
+
+        height: 25px;
+
+        font-size: 11px;
+
+    }
+
+}
+
+/* =====================================================
+   AJUSTE DO CABEÇALHO DAS SEÇÕES
+   Evita que o título fique atrás do sidebar
+===================================================== */
+
+.movie-section {
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho sempre respeitando o início do conteúdo */
+.movie-section .section-header {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 24px;
+    padding-right: 24px;
+
+    margin-left: 0;
+}
+
+/* Título */
+.movie-section .section-header h2 {
+    margin: 0;
+    padding: 0;
+
+    color: #6B4F3A;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+}
+
+/* Ver tudo */
+.movie-section .section-header a {
+    margin: 0;
+    padding: 0;
+
+    color: #6B4F3A;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.movie-section .section-header a:hover {
+    color: #E89150;
+}
+
+
+/* =====================================================
+   DESKTOP COM SIDEBAR RECOLHIDA
+===================================================== */
+
+@media (min-width: 701px) {
+
+    .sidebar.collapsed ~ .topbar {
+        left: 78px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .movie-section .section-header {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .movie-section .section-header h2 {
+        font-size: 16px;
+    }
+
+    .movie-section .section-header a {
+        font-size: 11px;
+    }
+
+}
